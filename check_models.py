@@ -1,7 +1,11 @@
 import google.generativeai as genai
 import os
 
-genai.configure(api_key="AIzaSyAvd1QbHIq17yJ3tkFgEX-xezPtt__sw1E")
+from dotenv import load_dotenv
+
+load_dotenv()
+
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 print("Modelos disponibles para tu API Key:")
 for m in genai.list_models():
