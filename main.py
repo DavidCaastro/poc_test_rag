@@ -4,8 +4,7 @@ from dotenv import load_dotenv
 
 # 1. CONFIGURACIÓN
 load_dotenv()
-api_key = os.getenv('GOOGLE_API_KEY')
-os.environ["GOOGLE_API_KEY"] = api_key
+os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY')
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
 warnings.filterwarnings("ignore", category=UserWarning)
