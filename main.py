@@ -15,7 +15,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
 # --- 2. MATRIZ DE GOBERNANZA ---
@@ -115,7 +114,7 @@ def ejecutar_pipeline(pregunta):
 if __name__ == "__main__":
     # PRUEBA: "¿Dame el reporte oficial de auditoría financiera?"
     # Al estar enriquecido el dato, la distancia será < 0.7
-    pregunta_test = "Cuanto dinero tenemos?"
+    pregunta_test = "Dame el reporte oficial de auditoría financiera"
     
     res, score = ejecutar_pipeline(pregunta_test)
     print(f"🤖 IA: {res}")
